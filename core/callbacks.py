@@ -23,8 +23,8 @@ class GANMonitor(Callback):
             img = array_to_img(generated_images[i])
             plt.imshow(img)
             plt.axis("off")
-        plt.savefig("epoch{:03d}.png".format(epoch))
+        plt.savefig("output/epochs/epoch{:03d}.png".format(epoch))
         plt.show()
         
     def on_train_end(self, logs=None):
-        self.model.generator.save("generator.h5")
+        self.model.generator.save("output/generator.h5")
